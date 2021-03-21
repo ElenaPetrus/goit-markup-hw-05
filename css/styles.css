@@ -586,7 +586,51 @@ margin-top: 9px;
 
 /*====================END FOOTER===========================*/
 
-/*====================PROJECT SELECTOR===========================*/ 
+/*====================MODAL WINDOW===========================*/
+.backdrop{
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    opacity:1;
+    transition: opacity 250ms var(--cubic);
+}
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 528px ;
+    min-height: 581px;
+    background: var(--contrast-color);
+    border-radius: 4px;
+
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 5000ms var(--cubic);
+}
+.modal-close-btn{
+    position: absolute;
+    top:8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background:var(--contrast-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.is-hidden{
+    opacity: 0;
+    pointer-events: none;
+}
+.is-hidden .modal{
+    transform: translate(-50%, -50%) scale(0.5);
+}
+/*====================END MODAL WINDOW=======================*/
+
+/*====================PROJECT SELECTOR========================*/ 
 .selector-list{
     display: flex;
     justify-content: center;
@@ -640,7 +684,6 @@ margin-top: 9px;
         padding-bottom: var(--section-btm);
     
     }
-
 /*====================END PROJECT SELECTOR===========================*/
 
 /*====================PROJECT EXAMPLES===========================*/
@@ -659,9 +702,13 @@ margin-top: 9px;
     margin-top: 30px;*/
     margin: 15px;
 }
+.project-link{
+    display:block;
 
-.project-item:hover,
-.project-item:focus{
+    transition: box-shadow 250ms var(--cubic);
+}
+.project-link:hover,
+.project-link:focus{
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .project-name {
