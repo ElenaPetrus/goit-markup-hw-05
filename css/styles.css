@@ -606,9 +606,10 @@ margin-top: 9px;
     min-height: 581px;
     background: var(--contrast-color);
     border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 
     transform: translate(-50%, -50%) scale(1);
-    transition: transform 5000ms var(--cubic);
+    transition: transform 250ms var(--cubic);
 }
 .modal-close-btn{
     position: absolute;
@@ -621,11 +622,11 @@ margin-top: 9px;
     border-radius: 50%;
     cursor: pointer;
 }
-.is-hidden{
+.backdrop.is-hidden{
     opacity: 0;
     pointer-events: none;
 }
-.is-hidden .modal{
+.backdrop.is-hidden .modal{
     transform: translate(-50%, -50%) scale(0.5);
 }
 /*====================END MODAL WINDOW=======================*/
